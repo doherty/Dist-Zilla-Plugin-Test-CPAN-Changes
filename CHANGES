@@ -1,4 +1,6 @@
 Revision history for Perl module Dist-Zilla-Plugin-ChangesTests
 
 {{$NEXT}}
+
+0.001     2011-04-02
     * Initial release
