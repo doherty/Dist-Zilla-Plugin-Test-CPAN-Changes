@@ -23,6 +23,9 @@ following file:
 
 See L<Test::CPAN::Changes> for what this test does.
 
+You should use this plugin instead of L<Dist::Zilla::Plugin::CPANChangesTests>
+because this one lets you cheat on the filename.
+
 =head2 Alternate changelog filenames
 
 L<CPAN::Changes::Spec> specifies that the changelog will be called 'Changes' -
