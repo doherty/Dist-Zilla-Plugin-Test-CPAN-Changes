@@ -1,6 +1,7 @@
 Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+    * New repository location
 
 0.002     2011-04-12
     * New name: Dist::Zilla::Plugin::Test::CPANChanges
