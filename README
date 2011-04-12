@@ -1,8 +1,9 @@
 NAME
-    Dist::Zilla::Plugin::ChangesTests - release tests for your changelog
+    Dist::Zilla::Plugin::Test::CPAN::Changes - release tests for your
+    changelog
 
 VERSION
-    version 0.001
+    version 0.002
 
 SYNOPSIS
     In "dist.ini":
@@ -16,6 +17,10 @@ DESCRIPTION
         xt/release/cpan-changes.t - a standard Test::CPAN::Changes test
 
     See Test::CPAN::Changes for what this test does.
+
+    You should use this plugin instead of
+    Dist::Zilla::Plugin::CPANChangesTests because this one lets you cheat on
+    the filename.
 
   Alternate changelog filenames
     CPAN::Changes::Spec specifies that the changelog will be called
@@ -31,7 +36,7 @@ AVAILABILITY
     The latest version of this module is available from the Comprehensive
     Perl Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a
     CPAN site near you, or see
-    <http://search.cpan.org/dist/Dist-Zilla-Plugin-ChangesTests/>.
+    <http://search.cpan.org/dist/Dist-Zilla-Plugin-Test-CPAN-Changes/>.
 
     The development version lives at
     <http://github.com/doherty/Dist-Zilla-Plugin-ChangesTests> and may be
@@ -50,7 +55,7 @@ BUGS AND LIMITATIONS
     No bugs have been reported.
 
     Please report any bugs or feature requests through the web interface at
-    <http://github.com/doherty/Dist-Zilla-Plugin-ChangesTests/issues>.
+    <http://github.com/doherty/Dist-Zilla-Plugin-Test-CPAN-Changes/issues>.
 
 AUTHOR
     Mike Doherty <doherty@cpan.org>

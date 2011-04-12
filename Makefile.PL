@@ -19,16 +19,16 @@ my %WriteMakefileArgs = (
   'CONFIGURE_REQUIRES' => {
     'ExtUtils::MakeMaker' => '6.31'
   },
-  'DISTNAME' => 'Dist-Zilla-Plugin-ChangesTests',
+  'DISTNAME' => 'Dist-Zilla-Plugin-Test-CPAN-Changes',
   'EXE_FILES' => [],
   'LICENSE' => 'perl',
-  'NAME' => 'Dist::Zilla::Plugin::ChangesTests',
+  'NAME' => 'Dist::Zilla::Plugin::Test::CPAN::Changes',
   'PREREQ_PM' => {
     'Dist::Zilla::Plugin::InlineFiles' => '0',
     'Dist::Zilla::Role::FileMunger' => '0',
     'Moose' => '0'
   },
-  'VERSION' => '0.001',
+  'VERSION' => '0.002',
   'test' => {
     'TESTS' => 't/*.t'
   }
