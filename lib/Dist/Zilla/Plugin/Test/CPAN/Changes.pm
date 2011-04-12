@@ -1,4 +1,4 @@
-package Dist::Zilla::Plugin::ChangesTests;
+package Dist::Zilla::Plugin::Test::CPAN::Changes;
 use strict;
 use warnings;
 # ABSTRACT: release tests for your changelog

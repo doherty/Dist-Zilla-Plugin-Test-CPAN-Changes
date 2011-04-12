@@ -1,6 +1,7 @@
-Revision history for Perl module Dist-Zilla-Plugin-ChangesTests
+Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+    * New name: Dist::Zilla::Plugin::Test::CPANChanges
 
 0.001     2011-04-02
     * Initial release
