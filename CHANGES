@@ -1,6 +1,8 @@
 Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+
+0.003     2011-04-12
     * New repository location
 
 0.002     2011-04-12

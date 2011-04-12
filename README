@@ -3,7 +3,7 @@ NAME
     changelog
 
 VERSION
-    version 0.002
+    version 0.003
 
 SYNOPSIS
     In "dist.ini":
@@ -39,17 +39,17 @@ AVAILABILITY
     <http://search.cpan.org/dist/Dist-Zilla-Plugin-Test-CPAN-Changes/>.
 
     The development version lives at
-    <http://github.com/doherty/Dist-Zilla-Plugin-ChangesTests> and may be
-    cloned from
-    <git://github.com/doherty/Dist-Zilla-Plugin-ChangesTests.git>. Instead
-    of sending patches, please fork this project using the standard git and
-    github infrastructure.
+    <http://github.com/doherty/Dist-Zilla-Plugin-Test-CPAN-Changes> and may
+    be cloned from
+    <git://github.com/doherty/Dist-Zilla-Plugin-Test-CPAN-Changes.git>.
+    Instead of sending patches, please fork this project using the standard
+    git and github infrastructure.
 
 SOURCE
     The development version is on github at
-    <http://github.com/doherty/Dist-Zilla-Plugin-ChangesTests> and may be
-    cloned from
-    <git://github.com/doherty/Dist-Zilla-Plugin-ChangesTests.git>
+    <http://github.com/doherty/Dist-Zilla-Plugin-Test-CPAN-Changes> and may
+    be cloned from
+    <git://github.com/doherty/Dist-Zilla-Plugin-Test-CPAN-Changes.git>
 
 BUGS AND LIMITATIONS
     No bugs have been reported.
