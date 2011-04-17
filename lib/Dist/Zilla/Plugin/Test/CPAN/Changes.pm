@@ -36,8 +36,6 @@ if you want to use a different filename for whatever reason, do:
 
 and that file will be tested instead.
 
-=for Pod::Coverage munge_file
-
 =cut
 
 has changelog => (
@@ -62,6 +60,14 @@ sub munge_file {
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
+
+=for Pod::Coverage munge_file
+
+=for test_synopsis
+1;
+__END__
+
+=cut
 
 __DATA__
 __[ xt/release/cpan-changes.t ]__
