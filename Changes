@@ -2,6 +2,7 @@ Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
     * Added tests
+    * Removed version requirement for File::Find
 
 0.003     2011-04-12
     * New repository location

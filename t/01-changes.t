@@ -67,8 +67,8 @@ subtest 'CHANGES' => sub {
 };
 
 END { # Remove (empty) dir created by building the dists
-    eval 'use File::Path 2.08';
-    File::Path::remove_tree('tmp') unless $@;
+    require File::Path;
+    File::Path::rmtree('tmp');
 }
 
 __DATA__
