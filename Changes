@@ -1,6 +1,8 @@
 Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+
+0.004     2011-04-20
     * Added tests
     * Removed version requirement for File::Find
 

@@ -13,8 +13,13 @@ my %WriteMakefileArgs = (
   'AUTHOR' => 'Mike Doherty <doherty@cpan.org>',
   'BUILD_REQUIRES' => {
     'File::Find' => '0',
+    'File::Path' => '0',
     'File::Temp' => '0',
-    'Test::More' => '0'
+    'Moose::Autobox' => '0',
+    'Test::CPAN::Changes' => '0',
+    'Test::DZil' => '0',
+    'Test::More' => '0.88',
+    'autodie' => '0'
   },
   'CONFIGURE_REQUIRES' => {
     'ExtUtils::MakeMaker' => '6.31'
@@ -28,7 +33,7 @@ my %WriteMakefileArgs = (
     'Dist::Zilla::Role::FileMunger' => '0',
     'Moose' => '0'
   },
-  'VERSION' => '0.003',
+  'VERSION' => '0.004',
   'test' => {
     'TESTS' => 't/*.t'
   }
