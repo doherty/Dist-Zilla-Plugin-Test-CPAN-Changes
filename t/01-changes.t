@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More 0.88 tests => 2;
+use Test::More 0.94 tests => 2;
 use Test::CPAN::Changes;
 use autodie;
 use Test::DZil;
