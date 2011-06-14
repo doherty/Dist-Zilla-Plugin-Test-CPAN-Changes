@@ -1,6 +1,7 @@
 Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+    * Fix prerequisite that wasn't getting picked up on some smokers
     * Fix synopsis [xenoterracide]
     * Fix documentation [xenoterracide]
 

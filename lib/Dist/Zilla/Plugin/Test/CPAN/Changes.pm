@@ -14,6 +14,10 @@ In C<dist.ini>:
 
     [Test::CPAN::Changes]
 
+=for test_synopsis
+1;
+__END__
+
 =head1 DESCRIPTION
 
 This is an extension of L<Dist::Zilla::Plugin::InlineFiles>, providing the
@@ -41,6 +45,10 @@ has changelog => (
     predicate => 'has_changelog',
 );
 
+=for Pod::Coverage munge_file
+
+=cut
+
 sub munge_file {
     my $self = shift;
     my $file = shift;
@@ -57,14 +65,6 @@ sub munge_file {
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
-
-=for Pod::Coverage munge_file
-
-=for test_synopsis
-1;
-__END__
-
-=cut
 
 __DATA__
 __[ xt/release/cpan-changes.t ]__
