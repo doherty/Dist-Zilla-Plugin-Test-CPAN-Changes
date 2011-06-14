@@ -2,9 +2,9 @@
 use strict;
 use warnings;
 
-BEGIN { require 5.006; }
+use 5.006;
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
@@ -18,22 +18,23 @@ my %WriteMakefileArgs = (
     'Moose::Autobox' => '0',
     'Test::CPAN::Changes' => '0',
     'Test::DZil' => '0',
-    'Test::More' => '0.88',
+    'Test::More' => '0.94',
     'autodie' => '0'
   },
   'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+    'ExtUtils::MakeMaker' => '6.30'
   },
   'DISTNAME' => 'Dist-Zilla-Plugin-Test-CPAN-Changes',
   'EXE_FILES' => [],
   'LICENSE' => 'perl',
   'NAME' => 'Dist::Zilla::Plugin::Test::CPAN::Changes',
   'PREREQ_PM' => {
+    'Dist::Zilla' => '4',
     'Dist::Zilla::Plugin::InlineFiles' => '0',
     'Dist::Zilla::Role::FileMunger' => '0',
     'Moose' => '0'
   },
-  'VERSION' => '0.004',
+  'VERSION' => '0.005',
   'test' => {
     'TESTS' => 't/*.t'
   }

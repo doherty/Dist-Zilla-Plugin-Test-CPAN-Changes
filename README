@@ -3,12 +3,12 @@ NAME
     changelog
 
 VERSION
-    version 0.004
+    version 0.005
 
 SYNOPSIS
     In "dist.ini":
 
-        [ChangesTests]
+        [Test::CPAN::Changes]
 
 DESCRIPTION
     This is an extension of Dist::Zilla::Plugin::InlineFiles, providing the
@@ -18,16 +18,12 @@ DESCRIPTION
 
     See Test::CPAN::Changes for what this test does.
 
-    You should use this plugin instead of
-    Dist::Zilla::Plugin::CPANChangesTests because this one lets you cheat on
-    the filename.
-
   Alternate changelog filenames
     CPAN::Changes::Spec specifies that the changelog will be called
     'Changes' - if you want to use a different filename for whatever reason,
     do:
 
-        [ChangesTests]
+        [Test::CPAN::Changes]
         changelog = CHANGES
 
     and that file will be tested instead.
