@@ -7,6 +7,7 @@ use warnings;
 use Moose;
 extends 'Dist::Zilla::Plugin::InlineFiles';
 with    'Dist::Zilla::Role::FileMunger';
+with    'Dist::Zilla::Role::PrereqSource';
 
 =head1 SYNOPSIS
 
@@ -63,6 +64,27 @@ sub munge_file {
     return;
 }
 
+# Register the release test prereq as a "develop requires"
+# so it will be listed in "dzil listdeps --author"
+sub register_prereqs {
+  my ($self) = @_;
+
+  $self->zilla->register_prereqs(
+    {
+      type  => 'requires',
+      phase => 'develop',
+    },
+    # Latest known release of Test::CPAN::Changes
+    # because CPAN authors must use the latest if we want
+    # this check to be relevant
+    'Test::CPAN::Changes'     => '0.19',
+  );
+}
+
+
+
+
+
 __PACKAGE__->meta->make_immutable;
 no Moose;
 
@@ -71,7 +93,6 @@ __[ xt/release/cpan-changes.t ]__
 #!perl
 
 use Test::More;
-eval 'use Test::CPAN::Changes';
-plan skip_all => 'Test::CPAN::Changes required for this test' if $@;
+use_ok('Test::CPAN::Changes');
 changes_ok();
 done_testing();
