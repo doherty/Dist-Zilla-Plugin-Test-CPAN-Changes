@@ -1,6 +1,8 @@
 Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+
+0.006     2013-04-13
     * Require Test::CPAN::Changes at install & run time [dolmen; GH#2]
 
 0.005     2011-06-14
