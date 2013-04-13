@@ -1,6 +1,7 @@
 Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+    * Require Test::CPAN::Changes at install & run time [dolmen; GH#2]
 
 0.005     2011-06-14
     * Fix prerequisite that wasn't getting picked up on some smokers

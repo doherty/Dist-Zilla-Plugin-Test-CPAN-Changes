@@ -9,37 +9,57 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'release tests for your changelog',
-  'AUTHOR' => 'Mike Doherty <doherty@cpan.org>',
-  'BUILD_REQUIRES' => {
-    'File::Find' => '0',
-    'File::Path' => '0',
-    'File::Temp' => '0',
-    'Moose::Autobox' => '0',
-    'Test::CPAN::Changes' => '0',
-    'Test::DZil' => '0',
-    'Test::More' => '0.94',
-    'autodie' => '0'
+  "ABSTRACT" => "release tests for your changelog",
+  "AUTHOR" => "Mike Doherty <doherty\@cpan.org>",
+  "BUILD_REQUIRES" => {
+    "Module::Build" => "0.3601"
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.30'
+  "CONFIGURE_REQUIRES" => {
+    "Module::Build" => "0.3601"
   },
-  'DISTNAME' => 'Dist-Zilla-Plugin-Test-CPAN-Changes',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'Dist::Zilla::Plugin::Test::CPAN::Changes',
-  'PREREQ_PM' => {
-    'Dist::Zilla' => '4',
-    'Dist::Zilla::Plugin::InlineFiles' => '0',
-    'Dist::Zilla::Role::FileMunger' => '0',
-    'Moose' => '0'
+  "DISTNAME" => "Dist-Zilla-Plugin-Test-CPAN-Changes",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "Dist::Zilla::Plugin::Test::CPAN::Changes",
+  "PREREQ_PM" => {
+    "Dist::Zilla" => 4,
+    "Dist::Zilla::Plugin::InlineFiles" => 0,
+    "Dist::Zilla::Role::FileMunger" => 0,
+    "Dist::Zilla::Role::PrereqSource" => 0,
+    "Moose" => 0,
+    "Test::CPAN::Changes" => "0.19",
+    "strict" => 0,
+    "warnings" => 0
   },
-  'VERSION' => '0.005',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "TEST_REQUIRES" => {
+    "File::Find" => 0,
+    "File::Path" => 0,
+    "File::Temp" => 0,
+    "Moose::Autobox" => 0,
+    "Test::CPAN::Changes" => 0,
+    "Test::DZil" => 0,
+    "Test::More" => "0.94",
+    "autodie" => 0
+  },
+  "VERSION" => "0.006",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
+  my $tr = delete $WriteMakefileArgs{TEST_REQUIRES};
+  my $br = $WriteMakefileArgs{BUILD_REQUIRES};
+  for my $mod ( keys %$tr ) {
+    if ( exists $br->{$mod} ) {
+      $br->{$mod} = $tr->{$mod} if $tr->{$mod} > $br->{$mod};
+    }
+    else {
+      $br->{$mod} = $tr->{$mod};
+    }
+  }
+}
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
   my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
