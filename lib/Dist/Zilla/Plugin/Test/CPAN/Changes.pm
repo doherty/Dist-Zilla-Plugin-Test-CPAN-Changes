@@ -46,7 +46,7 @@ has changelog => (
     predicate => 'has_changelog',
 );
 
-=for Pod::Coverage munge_file
+=for Pod::Coverage munge_file register_prereqs
 
 =cut
 
