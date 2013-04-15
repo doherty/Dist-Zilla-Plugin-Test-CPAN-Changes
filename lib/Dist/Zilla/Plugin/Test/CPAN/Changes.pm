@@ -102,6 +102,7 @@ __[ xt/release/cpan-changes.t ]__
 use strict;
 use warnings;
 
+use Test::More 0.88;
 use_ok('Test::CPAN::Changes');
 changes_file_ok('CHANGESFILENAME');
 done_testing();
