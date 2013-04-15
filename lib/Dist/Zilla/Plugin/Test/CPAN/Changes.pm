@@ -92,7 +92,9 @@ __DATA__
 __[ xt/release/cpan-changes.t ]__
 #!perl
 
-use Test::More;
+use Test::More tests => 2;
 use_ok('Test::CPAN::Changes');
-changes_ok();
+subtest 'changes_ok' => sub {
+    changes_ok();
+};
 done_testing();
