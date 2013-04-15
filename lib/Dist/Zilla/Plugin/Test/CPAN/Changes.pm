@@ -5,9 +5,10 @@ use warnings;
 # VERSION
 
 use Moose;
-extends 'Dist::Zilla::Plugin::InlineFiles';
-with    'Dist::Zilla::Role::FileMunger';
-with    'Dist::Zilla::Role::PrereqSource';
+use Data::Section -setup;
+with
+    'Dist::Zilla::Role::FileGatherer',
+    'Dist::Zilla::Role::PrereqSource';
 
 =head1 SYNOPSIS
 
@@ -44,24 +45,30 @@ has changelog => (
     is      => 'ro',
     isa     => 'Str',
     predicate => 'has_changelog',
+    default => 'Changes',
 );
 
-=for Pod::Coverage munge_file register_prereqs
+=for Pod::Coverage gather_files register_prereqs
 
 =cut
 
-sub munge_file {
+sub gather_files {
     my $self = shift;
-    my $file = shift;
-    return unless $file->name eq 'xt/release/cpan-changes.t';
 
-    if ($self->has_changelog) {
-        my $content = $file->content;
-        my $changelog = $self->changelog;
-        $content =~ s{\Qchanges_ok();\E}{changes_file_ok('$changelog');};
-        $file->content($content);
+    require Dist::Zilla::File::InMemory;
+
+    for my $file (qw( xt/release/cpan-changes.t )){
+        my $content = ${$self->section_data($file)};
+
+        my $changes_filename = $self->changelog;
+
+        $content =~ s/CHANGESFILENAME/$changes_filename/;
+
+        $self->add_file( Dist::Zilla::File::InMemory->new(
+            name => $file,
+            content => $content,
+        ));
     }
-    return;
 }
 
 # Register the release test prereq as a "develop requires"
@@ -94,5 +101,5 @@ __[ xt/release/cpan-changes.t ]__
 
 use Test::More;
 use_ok('Test::CPAN::Changes');
-changes_ok();
+changes_file_ok('CHANGESFILENAME');
 done_testing();

@@ -1,6 +1,8 @@
 Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+    * eliminate the FileMunger stage by modifying the file as it is created
+      (Karen Etheridge)
 
 0.006     2013-04-13
     * Require Test::CPAN::Changes at install & run time [dolmen; GH#2]
