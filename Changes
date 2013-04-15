@@ -1,6 +1,7 @@
 Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+    * Run changes_ok in a subtest for ease of planning [mjgardner; GH#3]
 
 0.006     2013-04-13
     * Require Test::CPAN::Changes at install & run time [dolmen; GH#2]
