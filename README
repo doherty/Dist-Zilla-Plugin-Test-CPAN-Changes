@@ -3,7 +3,7 @@ NAME
     changelog
 
 VERSION
-    version 0.006
+    version 0.007
 
 SYNOPSIS
     In "dist.ini":
@@ -30,7 +30,7 @@ DESCRIPTION
 
 AVAILABILITY
     The project homepage is
-    <http://p3rl.org/Dist::Zilla::Plugin::Test::CPAN::Changes>.
+    <http://metacpan.org/release/Dist-Zilla-Plugin-Test-CPAN-Changes/>.
 
     The latest version of this module is available from the Comprehensive
     Perl Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a

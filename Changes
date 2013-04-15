@@ -1,6 +1,8 @@
 Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+
+0.007     2013-04-14
     * Run changes_ok in a subtest for ease of planning [mjgardner; GH#3]
 
 0.006     2013-04-13
