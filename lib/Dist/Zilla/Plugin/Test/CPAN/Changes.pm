@@ -99,7 +99,9 @@ __DATA__
 __[ xt/release/cpan-changes.t ]__
 #!perl
 
-use Test::More;
+use strict;
+use warnings;
+
 use_ok('Test::CPAN::Changes');
 changes_file_ok('CHANGESFILENAME');
 done_testing();
