@@ -22,9 +22,10 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Dist::Zilla::Plugin::Test::CPAN::Changes",
   "PREREQ_PM" => {
+    "Data::Section" => 0,
     "Dist::Zilla" => 4,
-    "Dist::Zilla::Plugin::InlineFiles" => 0,
-    "Dist::Zilla::Role::FileMunger" => 0,
+    "Dist::Zilla::File::InMemory" => 0,
+    "Dist::Zilla::Role::FileGatherer" => 0,
     "Dist::Zilla::Role::PrereqSource" => 0,
     "Moose" => 0,
     "Test::CPAN::Changes" => "0.19",
@@ -41,7 +42,7 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.94",
     "autodie" => 0
   },
-  "VERSION" => "0.007",
+  "VERSION" => "0.008",
   "test" => {
     "TESTS" => "t/*.t"
   }
