@@ -1,6 +1,8 @@
 Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+    * eliminate the FileMunger stage by modifying the file as it is created
+      (Karen Etheridge)
 
 0.007     2013-04-14
     * Run changes_ok in a subtest for ease of planning [mjgardner; GH#3]

@@ -34,7 +34,7 @@ subtest 'Changes' => sub {
         or diag explain $tzil->files->flatten;
 
     my $changes_test = $tzil->slurp_file('build/xt/release/cpan-changes.t');
-    like($changes_test, qr{\Qchanges_ok();\E}, 'We have a cpan-changes test');
+    like($changes_test, qr{\Qchanges_file_ok('Changes');\E}, 'We have a cpan-changes test');
 };
 
 subtest 'CHANGES' => sub {
