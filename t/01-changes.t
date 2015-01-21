@@ -4,7 +4,6 @@ use Test::More 0.94 tests => 2;
 use Test::CPAN::Changes;
 use autodie;
 use Test::DZil;
-use Moose::Autobox;
 
 my $changes = do { local $/; <DATA>};
 
@@ -28,10 +27,10 @@ subtest 'Changes' => sub {
 
     my $has_changelog = grep(
         $_->name eq $changelog,
-        $tzil->files->flatten
+        @{ $tzil->files }
     );
     ok($has_changelog, 'changelog exists')
-        or diag explain $tzil->files->flatten;
+        or diag explain @{ $tzil->files };
 
     my $changes_test = $tzil->slurp_file('build/xt/release/cpan-changes.t');
     like($changes_test, qr{\Qchanges_file_ok('Changes');\E}, 'We have a cpan-changes test');
@@ -57,10 +56,10 @@ subtest 'CHANGES' => sub {
 
     my $has_changelog = grep(
         $_->name eq $changelog,
-        $tzil->files->flatten
+        @{ $tzil->files }
     );
     ok($has_changelog, 'changelog exists')
-        or diag explain $tzil->files->flatten;
+        or diag explain @{ $tzil->files };
 
     my $changes_test = $tzil->slurp_file('build/xt/release/cpan-changes.t');
     like($changes_test, qr{\Qchanges_file_ok('$changelog');\E}, 'We have a cpan-changes test');

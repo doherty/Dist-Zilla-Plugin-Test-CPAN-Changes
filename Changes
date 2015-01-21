@@ -1,6 +1,7 @@
 Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+    * Eliminate use of Moose::Autobox in tests [kentnl; GH#5]
 
 0.008     2013-04-17
     * eliminate the FileMunger stage by modifying the file as it is created
