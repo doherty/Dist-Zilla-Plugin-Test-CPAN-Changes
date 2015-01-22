@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::Test::CPAN::Changes - release tests for your changelog
 
 # VERSION
 
-version 0.008
+version 0.009
 
 # SYNOPSIS
 
@@ -14,16 +14,16 @@ In `dist.ini`:
 
 # DESCRIPTION
 
-This is an extension of [Dist::Zilla::Plugin::InlineFiles](http://search.cpan.org/perldoc?Dist::Zilla::Plugin::InlineFiles), providing the
+This is an extension of [Dist::Zilla::Plugin::InlineFiles](https://metacpan.org/pod/Dist::Zilla::Plugin::InlineFiles), providing the
 following file:
 
     xt/release/cpan-changes.t - a standard Test::CPAN::Changes test
 
-See [Test::CPAN::Changes](http://search.cpan.org/perldoc?Test::CPAN::Changes) for what this test does.
+See [Test::CPAN::Changes](https://metacpan.org/pod/Test::CPAN::Changes) for what this test does.
 
 ## Alternate changelog filenames
 
-[CPAN::Changes::Spec](http://search.cpan.org/perldoc?CPAN::Changes::Spec) specifies that the changelog will be called 'Changes' -
+[CPAN::Changes::Spec](https://metacpan.org/pod/CPAN::Changes::Spec) specifies that the changelog will be called 'Changes' -
 if you want to use a different filename for whatever reason, do:
 
     [Test::CPAN::Changes]
