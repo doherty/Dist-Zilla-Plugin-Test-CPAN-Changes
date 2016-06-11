@@ -1,6 +1,7 @@
 Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+    * Don't use use_ok [gh-8]
 
 0.009     2015-01-22
     * Eliminate use of Moose::Autobox in tests [kentnl; GH#5]
