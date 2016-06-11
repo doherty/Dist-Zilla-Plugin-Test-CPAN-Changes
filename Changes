@@ -1,6 +1,8 @@
 Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+
+0.010     2016-06-11
     * Don't use use_ok [gh-8]
 
 0.009     2015-01-22
