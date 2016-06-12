@@ -65,6 +65,8 @@ sub gather_files {
         my $changes_filename = $self->changelog;
 
         $content =~ s/CHANGESFILENAME/$changes_filename/;
+        $content =~ s/PLUGIN/ref($self)/e;
+        $content =~ s/VERSION/$self->VERSION || '<self>'/e;
 
         $self->add_file( Dist::Zilla::File::InMemory->new(
             name => $file,
@@ -101,6 +103,8 @@ __DATA__
 __[ xt/release/cpan-changes.t ]__
 use strict;
 use warnings;
+
+# this test was generated with PLUGIN VERSION
 
 use Test::More 0.96 tests => 1;
 use Test::CPAN::Changes;
