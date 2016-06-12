@@ -109,4 +109,3 @@ use Test::CPAN::Changes;
 subtest 'changes_ok' => sub {
     changes_file_ok('CHANGESFILENAME');
 };
-done_testing();
