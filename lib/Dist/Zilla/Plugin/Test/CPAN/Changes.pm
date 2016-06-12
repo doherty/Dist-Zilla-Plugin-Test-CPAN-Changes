@@ -57,7 +57,9 @@ around dump_config => sub
 
     $config->{+__PACKAGE__} = {
         $self->has_changelog ? ( changelog => $self->Changes ) : (),
-        blessed($self) ne __PACKAGE__ ? ( version => $VERSION ) : (),
+        blessed($self) ne __PACKAGE__
+            ? ( version => (defined __PACKAGE__->VERSION ? __PACKAGE__->VERSION : 'dev') )
+            : (),
     };
     return $config;
 };
