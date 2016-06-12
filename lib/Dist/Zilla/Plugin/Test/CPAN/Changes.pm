@@ -99,8 +99,6 @@ no Moose;
 
 __DATA__
 __[ xt/release/cpan-changes.t ]__
-#!perl
-
 use strict;
 use warnings;
 
