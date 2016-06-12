@@ -1,6 +1,8 @@
 Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+
+0.011     2016-06-11
   - Comments explaining where the added test came from [ether, gh-10]
   - Add some data for MetaConfig [ether, gh-10]
   - Some code cleanup [ether, gh-10]
