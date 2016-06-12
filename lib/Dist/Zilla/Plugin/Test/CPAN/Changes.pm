@@ -50,6 +50,18 @@ has changelog => (
     default => 'Changes',
 );
 
+around dump_config => sub
+{
+    my ($orig, $self) = @_;
+    my $config = $self->$orig;
+
+    $config->{+__PACKAGE__} = {
+        $self->has_changelog ? ( changelog => $self->Changes ) : (),
+        blessed($self) ne __PACKAGE__ ? ( version => $VERSION ) : (),
+    };
+    return $config;
+};
+
 =for Pod::Coverage gather_files register_prereqs
 
 =cut
