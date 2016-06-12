@@ -1,6 +1,8 @@
 Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+
+0.012     2016-06-12
   - fix silly typo in method name [ether's fault, gh-11]
 
 0.011     2016-06-11

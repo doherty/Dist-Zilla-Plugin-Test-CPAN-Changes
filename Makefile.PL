@@ -38,7 +38,7 @@ my %WriteMakefileArgs = (
     "autodie" => 0,
     "blib" => "1.01"
   },
-  "VERSION" => "0.011",
+  "VERSION" => "0.012",
   "test" => {
     "TESTS" => "t/*.t"
   }
