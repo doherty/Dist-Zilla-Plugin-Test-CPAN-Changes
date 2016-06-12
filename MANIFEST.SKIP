@@ -52,14 +52,11 @@
 # Avoid Devel::Cover and Devel::CoverX::Covered files.
 \bcover_db\b
 \bcovered\b
- 
+
 # Avoid MYMETA files
 ^MYMETA\.
 #!end included /home/mike/perl5/perlbrew/perls/perl-5.12.3/lib/site_perl/5.12.3/ExtUtils/MANIFEST.SKIP
 
 
 # Specific to this project
-^dist\.ini$
-^MANIFEST\.SKIP$
 ^\.build$
-^weaver\.ini$
