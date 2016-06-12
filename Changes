@@ -1,6 +1,7 @@
 Revision history for Perl module {{$dist->name}}
 
 {{$NEXT}}
+  - fix silly typo in method name [ether's fault, gh-11]
 
 0.011     2016-06-11
   - Comments explaining where the added test came from [ether, gh-10]
