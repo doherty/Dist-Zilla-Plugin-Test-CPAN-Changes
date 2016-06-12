@@ -46,7 +46,6 @@ and that file will be tested instead.
 has changelog => (
     is      => 'ro',
     isa     => 'Str',
-    predicate => 'has_changelog',
     default => 'Changes',
 );
 
@@ -56,7 +55,7 @@ around dump_config => sub
     my $config = $self->$orig;
 
     $config->{+__PACKAGE__} = {
-        $self->has_changelog ? ( changelog => $self->Changes ) : (),
+        changelog => $self->changelog,
         blessed($self) ne __PACKAGE__
             ? ( version => (defined __PACKAGE__->VERSION ? __PACKAGE__->VERSION : 'dev') )
             : (),
