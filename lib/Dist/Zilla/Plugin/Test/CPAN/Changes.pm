@@ -50,6 +50,18 @@ has changelog => (
     default => 'Changes',
 );
 
+around dump_config => sub
+{
+    my ($orig, $self) = @_;
+    my $config = $self->$orig;
+
+    $config->{+__PACKAGE__} = {
+        $self->has_changelog ? ( changelog => $self->Changes ) : (),
+        blessed($self) ne __PACKAGE__ ? ( version => $VERSION ) : (),
+    };
+    return $config;
+};
+
 =for Pod::Coverage gather_files register_prereqs
 
 =cut
@@ -65,6 +77,8 @@ sub gather_files {
         my $changes_filename = $self->changelog;
 
         $content =~ s/CHANGESFILENAME/$changes_filename/;
+        $content =~ s/PLUGIN/ref($self)/e;
+        $content =~ s/VERSION/$self->VERSION || '<self>'/e;
 
         $self->add_file( Dist::Zilla::File::InMemory->new(
             name => $file,
@@ -99,14 +113,13 @@ no Moose;
 
 __DATA__
 __[ xt/release/cpan-changes.t ]__
-#!perl
-
 use strict;
 use warnings;
+
+# this test was generated with PLUGIN VERSION
 
 use Test::More 0.96 tests => 1;
 use Test::CPAN::Changes;
 subtest 'changes_ok' => sub {
     changes_file_ok('CHANGESFILENAME');
 };
-done_testing();
